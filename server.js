@@ -21,12 +21,12 @@ app.use(bodyParser.json());
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to JIT application. Take Post quickly. Organize and keep track of all your Posts."});
+    res.json({"message": "Welcome to demo application. Take Post quickly. Organize and keep track of all your users."});
 });
 
 // Connecting to the database
 mongoose.connect(dbConfig.url, {
-    useNewUrlParser: true
+ useNewUrlParser: true
 }).then(() => {
     console.log("Successfully connected to the database");
 }).catch(err => {
@@ -35,7 +35,7 @@ mongoose.connect(dbConfig.url, {
 });
 
 // Require Notes routes
-require('./app/routes/post.routes.js')(app);
+require('./app/routes/register.routes.js')(app);
 
 
 // listen for requests
